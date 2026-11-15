@@ -1,9 +1,12 @@
-# VOSSBERG: native HTML rebuild of the spykercars.com look & behaviour
+# VOSSBERG: native HTML
+
+![VOSSBERG homepage preview](docs/preview/homepage.gif)
 
 A static site in plain HTML, CSS and JavaScript, with no framework and no build step needed to view it.
 Open `index.html` directly in Chrome, Edge or Firefox, or serve this folder with any static server.
 
 ## Structure
+
 ```
 index.html               home
 aquila.html              model page (scroll film, 3 chapters, ambient sound)
@@ -19,15 +22,18 @@ assets/js/               main.js (shared) + one file per page type (home, model,
                          boutique, product, news, article, contact), data.js
 assets/img|video|audio|fonts
 ```
+
 33 HTML pages in total, all in the project root.
 
 > The `build/` generator, `docs/` and `clone-kit/` folders from earlier versions are no longer in this folder. The pages are now edited directly.
 
 ## Editing
+
 Edit the HTML files directly. Header, menu, footer and cart markup is repeated in every page, so a change to one of them has to be made in all 33 files (a find-and-replace across the folder works well).
 Styles and behaviour live in `assets/css/main.css` and `assets/js/`. `assets/js/data.js` holds the shared data (products, prices, timeline) used by the scripts.
 
 ## Interactive states included
+
 - **Every page:** intro loader (first visit per session), page-transition curtain, smooth wheel scrolling, header that hides on scroll with two-tone clipping over dark sections, full-screen menu, bag drawer (empty and filled, quantities, remove, demo checkout message), newsletter drawer with validation, and cookie banner with Customize / Save preferences / Decline / Accept (reopen it from the footer "Cookie policy" link).
 - **Home:** hero parallax, letter-by-letter reveals, button character roll, underline links, editorial parallax, the motto frame opening, the film player with sound (play/pause, seek, mute, fullscreen), heritage collage (reveals and mouse parallax), boutique autoplay slider, news hover zoom, inline newsletter.
 - **Model page:**
@@ -45,6 +51,7 @@ Styles and behaviour live in `assets/css/main.css` and `assets/js/`. `assets/js/
 Forms never send data anywhere. They validate and then show a thank-you message.
 
 ## Placeholders to replace
+
 - **Brand:** VOSSBERG, the "V9 Aquila XXI Coupé", the motto "Fortes Fortuna Adiuvat" and all copy are invented.
 - **Contact details:** `hello@` and `press@vossberg-coachworks.com`, the Haarlem address, the phone number and the "By Atelier Noord" credit are fictional (search the HTML files and `assets/js/data.js`).
 - **Social links:** they point to `#`.
@@ -54,4 +61,5 @@ Forms never send data anywhere. They validate and then show a thank-you message.
 - **Logo:** set in Mr Dafoe (free Google Font) as text, not a drawn mark.
 
 ## Checks
+
 The audit and interaction-test scripts (`laudit.mjs`, `itest.mjs`) were part of the removed `clone-kit/` folder. Before release, check manually at 1440 and 390 px width for console errors, failed requests, broken images and links, and horizontal overflow.
